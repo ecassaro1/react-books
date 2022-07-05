@@ -23,7 +23,6 @@ class Main extends React.Component {
     render() {
         return (
             <div>
-                <p>Main</p>
                 <ButtonX onClick={this.handleClick}/>
                 <View1 response={this.state.response}/>
             </div>

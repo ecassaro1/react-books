@@ -5,7 +5,7 @@ class ButtonX extends React.Component {
       return (
         <button 
             onClick={this.props.onClick}>
-            I´m a button
+            Click to retrieve the books from DynamoDB
         </button>
       );
     }
