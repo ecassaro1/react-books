@@ -1,25 +1,30 @@
 import React from 'react';
 
-class Book extends React.Component {
-  render() {
-    return (
-      <li key={this.props.book.isbn.toString()}>
-        ISBN {this.props.book.isbn}, {this.props.book.title} by {this.props.book.author}
-      </li>
-    )
-  }
+/*
+const Book = (props)=> {
+  return (
+    <li key={props.book.isbn}>
+      ISBN {props.book.isbn}, {props.book.title} by {props.book.author}
+    </li>
+  )  
+}
+*/
+const Book = ({book})=> {
+  return (
+    <li key={book.isbn}>
+      ISBN {book.isbn}, {book.title} by {book.author}
+    </li>
+  )  
 }
 
-class View1 extends React.Component {
-    render() {
-      return (
-        <div>
-          <ul>
-            {this.props.response.map((book) => <Book book={book} />)}
-          </ul>
-        </div>
-      );
-    }
+const View1 = ({response})=> {
+  return (
+    <div>
+      <ul>
+        {response.map((book) => <Book book={book} />)}
+      </ul>
+    </div>
+  );  
 }
 
 export default View1;

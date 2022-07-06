@@ -1,33 +1,23 @@
-import React from 'react';
-import ButtonX from './ButtonX';
+import React, { useState } from 'react';
+import { Button }  from './Button';
 import Client from './Client';
 import View1 from './View1';
 
-class Main extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            response: []
-        }
+const Main = (props)=>{
+    const [response,setResponse] = useState([]);
 
-        this.handleClick = this.handleClick.bind(this);
-    }
-
-    async handleClick() {
+    const handleClick = ()=> {
         Client.get().then((result)=>{
-            console.log("result="+result);
-            this.setState({response: result});
+            setResponse(result);
         });
     }
 
-    render() {
-        return (
-            <div> 
-                <ButtonX onClick={this.handleClick}/>
-                {(this.state.response)?<View1 response={this.state.response}/>:<p>nada ainda...</p>}
-            </div>
-        );
-    }
+    return (
+        <div> 
+            <Button onClick={handleClick}/>
+            {(response.length>0)?<View1 response={response}/>:<p>nada ainda...</p>}
+        </div>
+    );
 }
 
 export default Main; 
