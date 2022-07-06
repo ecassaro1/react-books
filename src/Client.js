@@ -6,7 +6,7 @@ let Client = {
     get: ()=> {
         return new Promise((resolve,reject)=>{
             xhttp.onload = function() {
-                resolve(this.response);
+                resolve(JSON.parse(this.response));
             }
 
             xhttp.open("GET", url);

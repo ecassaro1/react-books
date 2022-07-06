@@ -7,7 +7,7 @@ class Main extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            response: "nada ainda..."
+            response: []
         }
 
         this.handleClick = this.handleClick.bind(this);
@@ -22,9 +22,9 @@ class Main extends React.Component {
 
     render() {
         return (
-            <div>
+            <div> 
                 <ButtonX onClick={this.handleClick}/>
-                <View1 response={this.state.response}/>
+                {(this.state.response)?<View1 response={this.state.response}/>:<p>nada ainda...</p>}
             </div>
         );
     }
