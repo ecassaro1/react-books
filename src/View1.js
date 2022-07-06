@@ -1,14 +1,5 @@
 import React from 'react';
 
-/*
-const Book = (props)=> {
-  return (
-    <li key={props.book.isbn}>
-      ISBN {props.book.isbn}, {props.book.title} by {props.book.author}
-    </li>
-  )  
-}
-*/
 const Book = ({book})=> {
   return (
     <li key={book.isbn}>
